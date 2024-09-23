@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Search from './components/Search';
+import BookList from './components/BookList';
+import About from './pages/About';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-function App() {
+
+const App = () => {
+  const [books, setBooks] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <Router>
+    <div className="app">
+      <Header />
+      <Routes>
+          <Route path="/about" element={<About />} />
+          </Routes>
+      <Search setBooks={setBooks} />
+      <BookList books={books} />
     </div>
+    </Router>
   );
-}
+};
 
 export default App;

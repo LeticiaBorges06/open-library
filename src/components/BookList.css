@@ -1,0 +1,16 @@
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .book-item {
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .book-item img {
+    width: 150px;
+  }
+  
